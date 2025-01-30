@@ -8,9 +8,14 @@ local Library = {
 
 	Font = Font.fromId(11702779409, Enum.FontWeight.Regular), -- Poppins
 	FontSize = 15,
-	MenuKey = Enum.KeyCode.LeftAlt,
+	MenuKey = Enum.KeyCode.Insert,
 	Folder = "v3"
 }
+
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+
 
 Library.__index = Library
 	
@@ -3604,4 +3609,3 @@ function Library:Keybind(Props)
     Library.Config[Props.Flag] = Keybind
     return setmetatable(Keybind, Library)
 end
-
