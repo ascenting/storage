@@ -524,10 +524,6 @@ local Library = {}; do
             BackgroundColor3 = "Accent";
         });
 
-        Library:AddToRegistry(Objects["shadow"], {
-            ImageColor3 = "Accent";
-        });
-
         function Watermark:SetVisiblity(Boolean)
             Objects["watermark"].Visible = Boolean;
         end;
@@ -812,9 +808,6 @@ local Library = {}; do
             Color = "Accent";
         })
 
-        Library:AddToRegistry(Objects["shadow"], {
-            ImageColor3 = "Accent";
-        })
 
         Objects["innerline"] = Instance.new("Frame")
         Objects["innerline"].Name = "innerline"
@@ -1423,9 +1416,6 @@ local Library = {}; do
             })
     
 
-            Library:AddToRegistry(SubObjects["shadow"], {
-                ImageColor3 = "Accent";
-            })
     
             function Colorpicker:Close()
                 SubObjects["pickerwindow"].Visible = false;
@@ -2887,26 +2877,6 @@ local Library = {}; do
             Color = "Border"
         })
 
-        Objects["shadow"] = Instance.new("ImageLabel")
-        Objects["shadow"].ImageColor3 = Library.Accent
-        Objects["shadow"].ScaleType = Enum.ScaleType.Slice
-        Objects["shadow"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-        Objects["shadow"].Name = "shadow"
-        Objects["shadow"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Objects["shadow"].Size = UDim2.new(1, 75, 1, 75)
-        Objects["shadow"].AnchorPoint = Vector2.new(0.5, 0.5)
-        Objects["shadow"].Image = "rbxassetid://112971167999062"
-        Objects["shadow"].BackgroundTransparency = 1
-        Objects["shadow"].Position = UDim2.new(0.5, 0, 0.5, 0)
-        Objects["shadow"].SliceScale = 0.75
-        Objects["shadow"].ZIndex = -1
-        Objects["shadow"].BorderSizePixel = 0
-        Objects["shadow"].SliceCenter = Rect.new(Vector2.new(112, 112), Vector2.new(147, 147))
-        Objects["shadow"].Parent = Objects["pickerwindow"];
-
-        Library:AddToRegistry(Objects["shadow"], {
-            ImageColor3 = "Accent"
-        })
 
         function Colorpicker:Close()
             Objects["pickerwindow"].Visible = false;
