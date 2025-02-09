@@ -10,7 +10,7 @@ local Library = {}; do
 
         FolderName = "EnergyAssault";
 
-        Key = Enum.KeyCode.End;
+        Key = Enum.KeyCode.Z;
         Open = true;
 
         Tabs = {};
