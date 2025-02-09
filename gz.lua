@@ -1,6 +1,6 @@
 local Library = {}; do
     Library = {
-        Accent = Color3.fromRGB(93, 62, 152);
+        Accent = Color3.fromRGB(255, 0, 85);
         Inline = Color3.fromRGB(21,21,21);
         Background = Color3.fromRGB(15,15,15);
         Text = Color3.fromRGB(255,255,255);
@@ -8,7 +8,7 @@ local Library = {}; do
         Border = Color3.fromRGB(35,35,35);
         Risky = Color3.fromRGB(255,0,0);
 
-        FolderName = "Celestial";
+        FolderName = "EnergyAssault";
 
         Key = Enum.KeyCode.End;
         Open = true;
@@ -54,19 +54,15 @@ local Library = {}; do
         -- Files
 
         if not isfile(Library.FolderName .. '/Utilities/Hue.png') then
-            writefile(Library.FolderName .. '/Utilities/Hue.png', game:HttpGet("https://raw.githubusercontent.com/sametexe001/celestial.club/refs/heads/main/images/hue.png"));
+            writefile(Library.FolderName .. '/Utilities/Hue.png', game:HttpGet("https://raw.githubusercontent.com/ascenting/images/refs/heads/main/hue.png"));
         end;
 
         if not isfile(Library.FolderName .. '/Utilities/Saturation.png') then
-            writefile(Library.FolderName .. '/Utilities/Saturation.png', game:HttpGet("https://raw.githubusercontent.com/sametexe001/celestial.club/refs/heads/main/images/saturation.png"));
+            writefile(Library.FolderName .. '/Utilities/Saturation.png', game:HttpGet("https://raw.githubusercontent.com/ascenting/images/refs/heads/main/saturation.png"));
         end;
 
         if not isfile(Library.FolderName .. '/Utilities/Value.png') then
-            writefile(Library.FolderName .. '/Utilities/Value.png', game:HttpGet("https://raw.githubusercontent.com/sametexe001/celestial.club/refs/heads/main/images/value.png"));
-        end;
-
-        if not isfile(Library.FolderName .. '/Utilities/Logo.png') then
-            writefile(Library.FolderName .. '/Utilities/Logo.png', game:HttpGet("https://raw.githubusercontent.com/sametexe001/celestial.club/refs/heads/main/images/celestiallogo-removebg-preview.png"));
+            writefile(Library.FolderName .. '/Utilities/Value.png', game:HttpGet("https://raw.githubusercontent.com/ascenting/images/refs/heads/main/value.png"));
         end;
     end;
 
@@ -463,24 +459,6 @@ local Library = {}; do
             Color = "Border";
         });
 
-        Objects["logo"] = Instance.new("ImageLabel")
-        Objects["logo"].ScaleType = Enum.ScaleType.Fit
-        Objects["logo"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-        Objects["logo"].AnchorPoint = Vector2.new(0, 0.5)
-        Objects["logo"].Image = getcustomasset(Library.FolderName .. "/Utilities/Logo.png");
-        Objects["logo"].BackgroundTransparency = 1
-        Objects["logo"].Position = UDim2.new(0, -5, 0.5, -1)
-        Objects["logo"].Name = "logo"
-        Objects["logo"].Size = UDim2.new(0, 38, 0, 47)
-        Objects["logo"].BorderSizePixel = 0
-        Objects["logo"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Objects["logo"].Parent = Objects["watermark"]
-        Objects["logo"].ImageColor3 = Library.Accent;
-
-        Library:AddToRegistry(Objects["logo"], {
-            ImageColor3 = "Accent";
-        });
-
         Objects["UIGradient"] = Instance.new("UIGradient")
         Objects["UIGradient"].Rotation = 90
         Objects["UIGradient"].Color = ColorSequence.new{
@@ -703,7 +681,7 @@ local Library = {}; do
         Objects["main"].Name = "main"
         Objects["main"].Position = UDim2.new(0.5, 0, 0.5, 0)
         Objects["main"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-        Objects["main"].Size = UDim2.new(0, 500, 0, 601)
+        Objects["main"].Size = UDim2.new(0, 542, 0, 602)
         Objects["main"].BorderSizePixel = 2
         Objects["main"].BorderColor3 = Color3.fromRGB(0,0,0);
         Objects["main"].BackgroundColor3 = Library.Background
