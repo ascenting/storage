@@ -1,11 +1,11 @@
 local Library = {}; do
     Library = {
-        Accent = Color3.fromRGB(55, 175, 225);
-        Inline = Color3.fromRGB(50, 50, 50);
-        Background = Color3.fromRGB(20, 20, 20);
+        Accent = Color3.fromRGB(93, 62, 152);
+        Inline = Color3.fromRGB(21,21,21);
+        Background = Color3.fromRGB(15,15,15);
         Text = Color3.fromRGB(255,255,255);
-        TextInactive = Color3.fromRGB(175, 175, 175);
-        Border = Color3.fromRGB(0, 0, 0);
+        TextInactive = Color3.fromRGB(135,135,135);
+        Border = Color3.fromRGB(35,35,35);
         Risky = Color3.fromRGB(255,0,0);
 
         FolderName = "Celestial";
@@ -63,6 +63,10 @@ local Library = {}; do
 
         if not isfile(Library.FolderName .. '/Utilities/Value.png') then
             writefile(Library.FolderName .. '/Utilities/Value.png', game:HttpGet("https://raw.githubusercontent.com/sametexe001/celestial.club/refs/heads/main/images/value.png"));
+        end;
+
+        if not isfile(Library.FolderName .. '/Utilities/Logo.png') then
+            writefile(Library.FolderName .. '/Utilities/Logo.png', game:HttpGet("https://raw.githubusercontent.com/sametexe001/celestial.club/refs/heads/main/images/celestiallogo-removebg-preview.png"));
         end;
     end;
 
@@ -520,24 +524,6 @@ local Library = {}; do
             BackgroundColor3 = "Accent";
         });
 
-        Objects["shadow"] = Instance.new("ImageLabel")
-        Objects["shadow"].ImageColor3 = Library.Accent
-        Objects["shadow"].ScaleType = Enum.ScaleType.Slice
-        Objects["shadow"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-        Objects["shadow"].Name = "shadow"
-        Objects["shadow"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Objects["shadow"].Size = UDim2.new(1, 25, 1, 25)
-        Objects["shadow"].AnchorPoint = Vector2.new(0.5, 0.5)
-        Objects["shadow"].Image = getcustomasset(Library.FolderName .. "/Utilities/Shadow.png");
-        Objects["shadow"].BackgroundTransparency = 1
-        Objects["shadow"].Position = UDim2.new(0.5, 0, 0.5, 0)
-        Objects["shadow"].SliceScale = 0.75
-        Objects["shadow"].ZIndex = -1
-        Objects["shadow"].BorderSizePixel = 0
-        Objects["shadow"].SliceCenter = Rect.new(Vector2.new(112, 112), Vector2.new(147, 147))
-        Objects["shadow"].Parent = Objects["watermark"]
-        Objects["shadow"].Visible = true;
-
         Library:AddToRegistry(Objects["shadow"], {
             ImageColor3 = "Accent";
         });
@@ -825,24 +811,6 @@ local Library = {}; do
         Library:AddToRegistry(Objects["UIStroke3"], {
             Color = "Accent";
         })
-
-        Objects["shadow"] = Instance.new("ImageLabel")
-        Objects["shadow"].ImageColor3 = Library.Accent
-        Objects["shadow"].ScaleType = Enum.ScaleType.Slice
-        Objects["shadow"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-        Objects["shadow"].Name = "shadow"
-        Objects["shadow"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Objects["shadow"].Size = UDim2.new(1, 75, 1, 75)
-        Objects["shadow"].AnchorPoint = Vector2.new(0.5, 0.5)
-        Objects["shadow"].Image = getcustomasset(Library.FolderName .. "/Utilities/Shadow.png");
-        Objects["shadow"].BackgroundTransparency = 1
-        Objects["shadow"].Position = UDim2.new(0.5, 0, 0.5, 0)
-        Objects["shadow"].SliceScale = 0.75
-        Objects["shadow"].ZIndex = -1
-        Objects["shadow"].BorderSizePixel = 0
-        Objects["shadow"].SliceCenter = Rect.new(Vector2.new(112, 112), Vector2.new(147, 147))
-        Objects["shadow"].Parent = Objects["main"]
-        Objects["shadow"].Visible = true;
 
         Library:AddToRegistry(Objects["shadow"], {
             ImageColor3 = "Accent";
@@ -1454,22 +1422,6 @@ local Library = {}; do
                 Color = "Border";
             })
     
-            SubObjects["shadow"] = Instance.new("ImageLabel")
-            SubObjects["shadow"].ImageColor3 = Library.Accent
-            SubObjects["shadow"].ScaleType = Enum.ScaleType.Slice
-            SubObjects["shadow"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-            SubObjects["shadow"].Name = "shadow"
-            SubObjects["shadow"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            SubObjects["shadow"].Size = UDim2.new(1, 75, 1, 75)
-            SubObjects["shadow"].AnchorPoint = Vector2.new(0.5, 0.5)
-            SubObjects["shadow"].Image = getcustomasset(Library.FolderName .. "/Utilities/Shadow.png");
-            SubObjects["shadow"].BackgroundTransparency = 1
-            SubObjects["shadow"].Position = UDim2.new(0.5, 0, 0.5, 0)
-            SubObjects["shadow"].SliceScale = 0.75
-            SubObjects["shadow"].ZIndex = -1
-            SubObjects["shadow"].BorderSizePixel = 0
-            SubObjects["shadow"].SliceCenter = Rect.new(Vector2.new(112, 112), Vector2.new(147, 147))
-            SubObjects["shadow"].Parent = SubObjects["pickerwindow"];
 
             Library:AddToRegistry(SubObjects["shadow"], {
                 ImageColor3 = "Accent";
