@@ -27,7 +27,6 @@ local Library = {}; do
         NotificationHolder = nil;
         LoadedConfig = nil;
         KeybindList = nil;
-        Watermark = nil;
 
         Dragging = false;
     };
@@ -430,111 +429,6 @@ local Library = {}; do
             delfile(`{Library.FolderName}/Configs/`..ConfigName..".json");
         end;
     end;
-
-    function Library:Watermark(Data)
-        local Objects = {};
-        local Watermark = {};
-
-        Objects["watermark"] = Instance.new("Frame")
-        Objects["watermark"].AnchorPoint = Vector2.new(0.5, 0)
-        Objects["watermark"].Name = "watermark"
-        Objects["watermark"].Position = UDim2.new(0.5, 0, 0, 20)
-        Objects["watermark"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-        Objects["watermark"].Size = UDim2.new(0, 300, 0, 25)
-        Objects["watermark"].BorderSizePixel = 2
-        Objects["watermark"].BackgroundColor3 = Library.Background
-        Objects["watermark"].Parent = Library.Holder;
-
-        Library:AddToRegistry(Objects["watermark"], {
-            BackgroundColor3 = "Background";
-        });
-
-        Objects["UIStroke"] = Instance.new("UIStroke")
-        Objects["UIStroke"].Color = Library.Border
-        Objects["UIStroke"].LineJoinMode = Enum.LineJoinMode.Miter
-        Objects["UIStroke"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-        Objects["UIStroke"].Parent = Objects["watermark"]
-
-        Library:AddToRegistry(Objects["UIStroke"], {
-            Color = "Border";
-        });
-
-        Objects["UIGradient"] = Instance.new("UIGradient")
-        Objects["UIGradient"].Rotation = 90
-        Objects["UIGradient"].Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
-            ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
-        }
-        Objects["UIGradient"].Parent = Objects["watermark"]
-
-        Objects["text"] = Instance.new("TextLabel")
-        Objects["text"].FontFace = LibFont
-        Objects["text"].TextColor3 = Library.Text
-        Objects["text"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-        Objects["text"].Text = Data.Name
-        Objects["text"].Name = "text"
-        Objects["text"].Size = UDim2.new(0, 0, 1, 0)
-        Objects["text"].BackgroundTransparency = 1
-        Objects["text"].Position = UDim2.new(0, 28, 0, 0)
-        Objects["text"].BorderSizePixel = 0
-        Objects["text"].AutomaticSize = Enum.AutomaticSize.X
-        Objects["text"].TextSize = 12
-        Objects["text"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Objects["text"].Parent = Objects["watermark"]
-
-        Library:AddToRegistry(Objects["text"], {
-            TextColor3 = "Text";
-        });
-
-        Objects["UIStroke2"] = Instance.new("UIStroke")
-        Objects["UIStroke2"].LineJoinMode = Enum.LineJoinMode.Miter
-        Objects["UIStroke2"].Parent = Objects["text"]
-
-        Objects["accent"] = Instance.new("Frame")
-        Objects["accent"].Name = "accent"
-        Objects["accent"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-        Objects["accent"].Size = UDim2.new(1, 0, 0, 1)
-        Objects["accent"].BorderSizePixel = 0
-        Objects["accent"].BackgroundColor3 = Library.Accent
-        Objects["accent"].Parent = Objects["watermark"]
-
-        Library:AddToRegistry(Objects["accent"], {
-            BackgroundColor3 = "Accent";
-        });
-
-        function Watermark:SetVisiblity(Boolean)
-            Objects["watermark"].Visible = Boolean;
-        end;
-
-        task.spawn(function()
-            Objects["watermark"].Size = UDim2.new(0,Objects["text"].TextBounds.X + 32,0,25);
-            local FrameTime = tick();
-            local FrameCount = 0;
-            local FPS = 60;
-
-            local WatermarkConnection = game:GetService('RunService').RenderStepped:Connect(function()
-                local CurrentCFG = Library.LoadedConfig;
-                FrameCount += 1;
-
-                if (tick() - FrameTime) >= 1 then
-                    FPS = FrameCount;
-                    FrameTime = tick();
-                    FrameCount = 0;
-                end;
-
-                Objects["text"].Text = (`%s  |  %s fps  |  %s ms  |  %s`):format(
-                    Data.Name,
-                    math.floor(FPS),
-                    math.floor(game:GetService('Stats').Network.ServerStatsItem['Data Ping']:GetValue()),
-                    game.Players.LocalPlayer.UserId
-                );
-                Objects["watermark"].Size = UDim2.new(0,Objects["text"].TextBounds.X + 32,0,25);
-            end);
-        end);
-
-        return Watermark;
-    end;
-    
 
     function Library:KeybindList()
         local Objects = {};
