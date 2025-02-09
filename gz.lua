@@ -1,11 +1,11 @@
 local Library = {}; do
     Library = {
-        Accent = Color3.fromRGB(106, 191, 247);
-        Inline = Color3.fromRGB(21,21,21);
-        Background = Color3.fromRGB(15,15,15);
+        Accent = Color3.fromRGB(55, 175, 225);
+        Inline = Color3.fromRGB(50, 50, 50);
+        Background = Color3.fromRGB(20, 20, 20);
         Text = Color3.fromRGB(255,255,255);
-        TextInactive = Color3.fromRGB(135,135,135);
-        Border = Color3.fromRGB(35,35,35);
+        TextInactive = Color3.fromRGB(175, 175, 175);
+        Border = Color3.fromRGB(0, 0, 0);
         Risky = Color3.fromRGB(255,0,0);
 
         FolderName = "Celestial";
