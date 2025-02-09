@@ -64,14 +64,6 @@ local Library = {}; do
         if not isfile(Library.FolderName .. '/Utilities/Value.png') then
             writefile(Library.FolderName .. '/Utilities/Value.png', game:HttpGet("https://raw.githubusercontent.com/sametexe001/celestial.club/refs/heads/main/images/value.png"));
         end;
-
-        if not isfile(Library.FolderName .. '/Utilities/Shadow.png') then
-            writefile(Library.FolderName .. '/Utilities/Shadow.png', game:HttpGet("https://raw.githubusercontent.com/sametexe001/celestial.club/refs/heads/main/images/shadow.png"));
-        end;
-
-        if not isfile(Library.FolderName .. '/Utilities/Logo.png') then
-            writefile(Library.FolderName .. '/Utilities/Logo.png', game:HttpGet("https://raw.githubusercontent.com/sametexe001/celestial.club/refs/heads/main/images/celestiallogo-removebg-preview.png"));
-        end;
     end;
 
     local Keys                = {
